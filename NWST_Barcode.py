@@ -1,15 +1,7 @@
 import numpy as np
 import streamlit as st
 import pandas as pd
-import os
 import time
-
-import pickle
-import os
-# from google_auth_oauthlib.flow import Flow, InstalledAppFlow
-# from googleapiclient.discovery import build
-# from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
-# from google.auth.transport.requests import Request
 
 
 timestr = time.strftime("%Y%m%d-%H%M%S")
@@ -17,8 +9,8 @@ timestr = time.strftime("%Y%m%d-%H%M%S")
 import qrcode
 qr = qrcode.QRCode(version=1, 
                    error_correction=qrcode.constants.ERROR_CORRECT_L, 
-                   box_size=10,
-                   border=14)
+                   box_size=5,
+                   border=1)
 
 from PIL import Image
 # Function to Load Image
@@ -59,7 +51,7 @@ def main():
         if mobile_number in database['Mobile Number'].unique():
             name = database.loc[database['Mobile Number'] == mobile_number].iloc[0, 1]
             st.header(f"**Hello {name} !**")
-            st.image(image=img_filename, width=200)
+            st.image(image=img_filename, width=100)
         else: 
             st.header("**Your number is NOT in the system.**")
             st.link_button("Please fill NEWCOMER'S FORM here", "https://sibkl.elvanto.com.au/form/ae45fdca-47a2-4d2f-9cf9-87d338a03625")
