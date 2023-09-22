@@ -48,13 +48,16 @@ def main():
 
     # Layout
     if submit_button:
+        col1, col2 = st.columns(2)
         if mobile_number in database['Mobile Number'].unique():
             name = database.loc[database['Mobile Number'] == mobile_number].iloc[0, 1]
-            st.header(f"**Hello {name} !**")
+            #st.header(f"**Hello {name} !**")        
+            st.success(f"**Hello {name} !**", icon="👋")
             st.image(image=img_filename, width=100)
+                
             st.balloons()
         else: 
-            st.header("**Your number is NOT in the system.**")
+            st.warning("**Your number is NOT in the system.**")
             st.link_button("Please fill NEWCOMER'S FORM here", "https://sibkl.elvanto.com.au/form/ae45fdca-47a2-4d2f-9cf9-87d338a03625")
 
 if __name__ == '__main__':
