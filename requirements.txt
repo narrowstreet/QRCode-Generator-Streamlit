@@ -1,0 +1,8 @@
+numpy
+streamlit
+pandas
+os
+time
+qrcode
+PIL
+Image
