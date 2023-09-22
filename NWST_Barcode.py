@@ -20,7 +20,7 @@ def load_image(img):
 # Application
 def main():
     st.set_page_config(page_title="NWST Check In QRCode", page_icon="🕶️")
-    database = pd.read_excel("ALL-Narrowstreet_2023-09-20.xlsx")
+    database = pd.read_excel("ALL-Narrowstreet.xlsx")
 
     st.subheader("Generate QRCode")
     # Text Input
@@ -52,6 +52,7 @@ def main():
             name = database.loc[database['Mobile Number'] == mobile_number].iloc[0, 1]
             st.header(f"**Hello {name} !**")
             st.image(image=img_filename, width=100)
+            st.balloons()
         else: 
             st.header("**Your number is NOT in the system.**")
             st.link_button("Please fill NEWCOMER'S FORM here", "https://sibkl.elvanto.com.au/form/ae45fdca-47a2-4d2f-9cf9-87d338a03625")
