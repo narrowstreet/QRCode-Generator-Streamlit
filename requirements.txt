@@ -1,7 +1,6 @@
 numpy
 streamlit
 pandas
-time
 qrcode
 PIL
 Image
