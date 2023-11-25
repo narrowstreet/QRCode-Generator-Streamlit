@@ -20,7 +20,7 @@ def load_image(img):
 # Application
 def main():
     st.set_page_config(page_title="NWST Check In QRCode", page_icon="🕶️")
-    database = pd.read_excel("ALL-Narrowstreet.xlsx")
+    database = pd.read_excel("ALL-Narrowstreet (3).xlsx")
 
     st.subheader("Generate QRCode")
     # Text Input
